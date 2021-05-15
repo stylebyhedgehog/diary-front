@@ -17,7 +17,9 @@ export default {
     };
   },
   mounted() {
-    UserService.getUserBoard().then(
+    let id =this.$store.state.auth.user.id
+
+    UserService.getUserBoard(id).then(
       (response) => {
         this.content = response.data;
       },
